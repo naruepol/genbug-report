@@ -1,0 +1,3 @@
+# The PHP image only copies files from docker/php; the app itself is bind-mounted.
+*
+!docker/php/

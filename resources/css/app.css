@@ -1,0 +1,62 @@
+/* Only scan the folders that contain class names; scanning the whole project over a
+   Docker bind mount is slow. */
+@import 'tailwindcss' source(none);
+
+@source '../js';
+@source '../views';
+
+/*
+ * Design tokens. Chart and status colours follow the validated data-viz palette:
+ * text always uses the ink tokens; status colours appear only as marks (dots, bars)
+ * next to a text label, never as the only signal.
+ */
+@theme {
+    --font-sans: system-ui, -apple-system, 'Segoe UI', 'Noto Sans Thai', 'Leelawadee UI', 'Thonburi', Roboto,
+        'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+    --color-page: #f9f9f7;
+    --color-surface: #ffffff;
+    --color-chip: #f1f0ec;
+    --color-hairline: #e1e0d9;
+    --color-baseline: #c3c2b7;
+
+    --color-ink: #0b0b0b;
+    --color-ink-secondary: #52514e;
+    --color-ink-muted: #898781;
+
+    --color-brand: #256abf;
+    --color-brand-hover: #1c5cab;
+    --color-brand-soft: #e8f1fc;
+    --color-link: #1c5cab;
+
+    --color-series-1: #2a78d6;
+
+    --color-status-good: #0ca30c;
+    --color-status-warning: #fab219;
+    --color-status-serious: #ec835a;
+    --color-status-critical: #d03b3b;
+    --color-success-text: #006300;
+    --color-danger: #b42f2f;
+    --color-danger-hover: #992626;
+}
+
+@layer base {
+    html {
+        color-scheme: light;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand);
+        outline-offset: 2px;
+    }
+}
+
+@utility tabular {
+    font-variant-numeric: tabular-nums;
+}
